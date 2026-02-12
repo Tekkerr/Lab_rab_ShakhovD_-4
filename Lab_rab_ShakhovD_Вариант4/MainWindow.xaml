@@ -1,0 +1,63 @@
+﻿<Window x:Class="Lab_rab_ShakhovD_Вариант4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ЛР1 — Вариант 4" Height="320" Width="450">
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.ColumnSpan="2"
+                   Text="Введите время"
+                   FontSize="16"
+                   FontWeight="Bold"
+                   Margin="0,0,0,10"/>
+
+        <TextBlock Grid.Row="1" Text="Часы:"/>
+        <TextBox x:Name="TbHours"
+                 Grid.Row="1" Grid.Column="1"
+                 PreviewTextInput="NumberOnly"
+                 PreviewKeyDown="NoSpace"/>
+
+        <TextBlock Grid.Row="2" Text="Минуты:"/>
+        <TextBox x:Name="TbMinutes"
+                 Grid.Row="2" Grid.Column="1"
+                 PreviewTextInput="NumberOnly"
+                 PreviewKeyDown="NoSpace"/>
+
+        <TextBlock Grid.Row="3" Text="Секунды:"/>
+        <TextBox x:Name="TbSeconds"
+                 Grid.Row="3" Grid.Column="1"
+                 PreviewTextInput="NumberOnly"
+                 PreviewKeyDown="NoSpace"/>
+
+        <StackPanel Grid.Row="4" Grid.ColumnSpan="2" Margin="0,15,0,0">
+
+            <WrapPanel Margin="0,0,0,10">
+                <Button Content="Полные минуты"
+                        Width="130"
+                        Margin="0,0,10,0"
+                        Click="BtnMinutes_Click"/>
+
+                <Button Content="Минус 10 минут"
+                        Width="130"
+                        Click="BtnMinus_Click"/>
+            </WrapPanel>
+
+            <TextBox x:Name="TbResult"
+                     Height="70"
+                     IsReadOnly="True"
+                     TextWrapping="Wrap"/>
+        </StackPanel>
+    </Grid>
+</Window>
